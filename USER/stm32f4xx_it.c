@@ -32,7 +32,7 @@
  
 u8 VblistA_full;
 u16 count_canmessage;
-u8 complete_count, complete_count1;
+
 u16 count_canmessage1, count_canmessage2;
 u32 time_count, time_count_ms, time_count_us,time_count_sec;
 u32 time_count1, test_count, Keep_count;

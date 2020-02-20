@@ -6,7 +6,7 @@
 #include "includes.h"					//ucos ʹ��	  
 #endif
 extern void MY_NVIC_Init(u8 NVIC_PreemptionPriority,u8 NVIC_SubPriority,u8 NVIC_Channel,u8 NVIC_Group);    
-u8 receive_data[30];
+u8 receive_data[256];
 u16 receive_count;
 u8 VbWaitforsend = 0;
 extern u8 start_message[5];
@@ -139,6 +139,55 @@ void USART1_IRQHandler(void)
           send_message_wait_receive = 0;
        }
     }
+    if(send_message_wait_receive == 8)
+    {
+       if(receive_count == 18)
+       {
+           receive_count = 0;
+          send_message_wait_receive = 0;
+       }
+    }
+    if(send_message_wait_receive == 9)
+    {
+       if(receive_count == 20)
+       {
+           receive_count = 0;
+          send_message_wait_receive = 0;
+       }
+    }   
+    if(send_message_wait_receive == 10)
+    {
+       if(receive_count == 12)
+       {
+           receive_count = 0;
+          send_message_wait_receive = 0;
+       }
+    }
+     if(send_message_wait_receive == 12)
+    {
+       if(receive_count == 11)
+       {
+           receive_count = 0;
+          send_message_wait_receive = 0;
+       }
+    }   
+     if(send_message_wait_receive == 13)
+    {
+       if(receive_count == 22)
+       {
+           receive_count = 0;
+          send_message_wait_receive = 0;
+       }
+    }
+     if(send_message_wait_receive == 14)
+    {
+       if(receive_count == 13)
+       {
+           receive_count = 0;
+          send_message_wait_receive = 0;
+       }
+    }
+
 
       if(VbWaitforsend == 0)
       {
